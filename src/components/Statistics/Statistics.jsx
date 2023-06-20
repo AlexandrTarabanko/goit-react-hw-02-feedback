@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Statistics = ({
   good,
   neutral,
@@ -5,18 +7,9 @@ export const Statistics = ({
   total,
   positivePercentage,
 }) => {
-  // const arrInfo = Object.keys(props).map(key => [key, props[key]]);
   return (
     <>
-      <h2>Statistics</h2>
       <ul>
-        {/* {arrInfo.map(optionName => (
-          <li key={optionName[0]}>
-            <button>
-              {optionName[0]}: {optionName[1]}
-            </button>
-          </li>
-        ))} */}
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>
         <li>Bad: {bad}</li>
@@ -25,4 +18,12 @@ export const Statistics = ({
       <p>Positive Feedback: {positivePercentage}%</p>
     </>
   );
+};
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
