@@ -7,8 +7,10 @@
 .feedbackBtn{
     cursor: pointer;
     background-color: whitesmoke;
+    text-transform: capitalize;
     border: 1px solid black;
     border-radius: 10px;
+
 
     transition: background-color 500ms ease-in-out;
     transition: color 500ms ease-in-out;
