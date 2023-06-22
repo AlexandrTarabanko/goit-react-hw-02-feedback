@@ -14,22 +14,16 @@ export class App extends Component {
   countTotalFeedback() {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
-
-    // let total = 0;
-    // arr.forEach(el => {
-    //   totalCount += el[1];
-    // });
-
-    // return totalCount;
   }
 
   countPositiveFeedbackPercentage() {
-    // let positiveArr = arr[0];
-    // let positiveVoices = positiveArr[1];
-
     const { good } = this.state;
 
-    return Math.round((good / this.countTotalFeedback()) * 100);
+    if (good) {
+      return Math.round((good / this.countTotalFeedback()) * 100);
+    } else {
+      return 0;
+    }
   }
 
   addVoice = option => {
